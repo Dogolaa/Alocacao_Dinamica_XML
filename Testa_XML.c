@@ -86,7 +86,13 @@ int validateXML(const char* filename) {
 }
 
 int main() {
-    const char* filename = "teste.xml"; // Substitua pelo nome do arquivo XML que deseja validar
+
+    char filename[100];
+    printf("\nDigite o nome do arquivo xml que você deseja validar.\nExemplo de uso: nome.xml\nNome do arquivo:  ");
+    fgets(filename, sizeof(filename), stdin);
+    printf("\n");
+    filename[strcspn(filename, "\n")] = '\0';
+
     validateXML(filename);
 
     return 0;
